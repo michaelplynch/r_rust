@@ -1,0 +1,22 @@
+---
+title: "benchmark"
+author: "Michael Lynch"
+format: html
+editor: visual
+---
+
+
+```{r}
+hello_world_rust<-function(){
+  print(hello_world())
+}
+library(rrust)
+benchmark("r"=hello_world_r(),
+          "rust"=hello_world(),
+          "rust_via_r"=hello_world_rust(),
+          replications = 10000)
+hello_world()
+hello_world_r()
+```
+
+
